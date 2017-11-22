@@ -115,7 +115,7 @@
 
 				triStream.RestartStrip();
 				
-				//Bottom
+				//Bottom face
 				normal = float3(0, -1, 0);
 
 				normal = normalize(mul(normal, (float3x3) unity_WorldToObject));
@@ -136,7 +136,7 @@
 
 				triStream.RestartStrip();
 				
-				//Top
+				//Top face
 				normal = float3(0, 1, 0);
 
 				normal = normalize(mul(normal, (float3x3) unity_WorldToObject));
@@ -157,7 +157,7 @@
 
 				triStream.RestartStrip();
 
-				//Back
+				//Back face
 				normal = float3(0, 0, -1);
 
 				normal = normalize(mul(normal, (float3x3) unity_WorldToObject));
@@ -178,7 +178,7 @@
 
 				triStream.RestartStrip();
 				
-				//Front
+				//Front face
 				normal = float3(0, 0, 1);
 
 				normal = normalize(mul(normal, (float3x3) unity_WorldToObject));
