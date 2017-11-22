@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: FlatShading
-  m_Shader: {fileID: 4800000, guid: 058be86cca55fcb4589be81cbaa8ef06, type: 3}
+  m_Name: ExpandFaces
+  m_Shader: {fileID: 4800000, guid: dde99174307264f43917c6f695767630, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -59,6 +59,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _ExpandAmount: 0.09
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
