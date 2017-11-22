@@ -1,13 +1,14 @@
-﻿Shader "Custom/GeometryShaders/FlatShading"
+﻿Shader "Custom/GeometryShaders/ExpandFaces"
 {
 	Properties
 	{
 		_Color("Color", Color) = (1,1,1,1)
+		_ExpandAmount("Expand Amount", Range(0, 5)) = 0
 	}
 
 	SubShader
 	{
-		Tags{ "Queue" = "Geometry" "RenderType" = "Opaque"}
+		Tags{ "Queue" = "Geometry" "RenderType" = "Opaque" }
 
 		Pass
 		{
@@ -19,6 +20,7 @@
 			#pragma fragment frag
 
 			float4 _Color;
+			float _ExpandAmount;
 
 			struct v2g
 			{
@@ -56,7 +58,12 @@
 				float3 edgeA = v1 - v0;
 				float3 edgeB = v2 - v0;
 
-				float3 normal = cross(normalize(edgeA), normalize(edgeB));
+				float3 normal = normalize(cross(normalize(edgeA), normalize(edgeB)));
+
+				v0 += float4(normal * _ExpandAmount, 0);
+				v1 += float4(normal * _ExpandAmount, 0);
+				v2 += float4(normal * _ExpandAmount, 0);
+
 				normal = normalize(mul(normal, (float3x3) unity_WorldToObject));
 
 				float3 lightDirection = normalize(_WorldSpaceLightPos0.xyz);
