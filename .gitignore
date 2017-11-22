@@ -13,3 +13,6 @@ Desktop.ini
 /Temp
 /UnityPackageManager
 /Packages
+GVoxelizer.CSharp.Editor.csproj
+GVoxelizer.CSharp.csproj
+GVoxelizer.sln
